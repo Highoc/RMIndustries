@@ -19,6 +19,15 @@
     <Filter Include="Include\Engine">
       <UniqueIdentifier>{bb5a1ad8-25d5-4cfe-b570-8029e55110e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Entity">
+      <UniqueIdentifier>{38a69c4a-55d6-4b54-adaa-860e7c76e472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Entity">
+      <UniqueIdentifier>{acaefd45-9ba3-4de2-bf54-51f17e5da10a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resourses\Tile">
+      <UniqueIdentifier>{70314797-57b6-4ab4-8959-b900f106ce2a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Source.cpp">
@@ -27,6 +36,9 @@
     <ClCompile Include="Code\Engine\Engine.cpp">
       <Filter>Code\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Code\Entity\Entity.cpp">
+      <Filter>Code\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Header.hpp">
@@ -34,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="Include\Engine\Engine.hpp">
       <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Engine\RenderManager.hpp">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entity\Entity.hpp">
+      <Filter>Include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

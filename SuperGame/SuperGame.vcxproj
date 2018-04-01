@@ -20,10 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Engine\Engine.cpp" />
+    <ClCompile Include="Code\Entity\Entity.cpp" />
     <ClCompile Include="Code\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Code\Engine\RenderManager.hpp" />
     <ClInclude Include="Include\Engine\Engine.hpp" />
+    <ClInclude Include="Include\Entity\Entity.hpp" />
     <ClInclude Include="Include\Header.hpp" />
   </ItemGroup>
   <ItemGroup>
