@@ -19,6 +19,21 @@
     <Filter Include="Include\Engine">
       <UniqueIdentifier>{bb5a1ad8-25d5-4cfe-b570-8029e55110e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Entity">
+      <UniqueIdentifier>{38a69c4a-55d6-4b54-adaa-860e7c76e472}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Entity">
+      <UniqueIdentifier>{acaefd45-9ba3-4de2-bf54-51f17e5da10a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resourses\Tile">
+      <UniqueIdentifier>{70314797-57b6-4ab4-8959-b900f106ce2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resourses\Map">
+      <UniqueIdentifier>{551449ff-3ef0-41a4-a012-6e6c018933d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TinyXML">
+      <UniqueIdentifier>{66efafa8-ef9a-4401-8b18-3bdbd065c84d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Source.cpp">
@@ -26,6 +41,21 @@
     </ClCompile>
     <ClCompile Include="Code\Engine\Engine.cpp">
       <Filter>Code\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Entity\Entity.cpp">
+      <Filter>Code\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\TinyXML\tinystr.cpp">
+      <Filter>Code\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\TinyXML\tinyxml.cpp">
+      <Filter>Code\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\TinyXML\tinyxmlerror.cpp">
+      <Filter>Code\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="Libs\TinyXML\tinyxmlparser.cpp">
+      <Filter>Code\TinyXML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -35,10 +65,39 @@
     <ClInclude Include="Include\Engine\Engine.hpp">
       <Filter>Include\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Entity\Entity.hpp">
+      <Filter>Include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Engine\Level.hpp">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Resourses\test.txt">
-      <Filter>Resourses</Filter>
-    </Text>
+    <None Include="Resourses\Map\bomsh.tmx">
+      <Filter>Resourses\Map</Filter>
+    </None>
+    <None Include="Resourses\Map\bomsh2.tmx">
+      <Filter>Resourses\Map</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resourses\Tile\tile.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
+    <Image Include="Resourses\Tile\tile1.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
+    <Image Include="Resourses\Tile\tile2.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
+    <Image Include="Resourses\Tile\tile3.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
+    <Image Include="Resourses\Tile\tile4.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
+    <Image Include="Resourses\Tile\tile5.png">
+      <Filter>Resourses\Tile</Filter>
+    </Image>
   </ItemGroup>
 </Project>
