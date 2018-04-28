@@ -20,30 +20,32 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Engine\Engine.cpp" />
+    <ClCompile Include="Code\Entity\AnimatedEntity.cpp" />
     <ClCompile Include="Code\Entity\Entity.cpp" />
+    <ClCompile Include="Code\GraphicLoader\GraphicLoader.cpp" />
+    <ClCompile Include="Code\GraphicLoader\Layer.cpp" />
+    <ClCompile Include="Code\GraphicLoader\Tileset.cpp" />
     <ClCompile Include="Code\Source.cpp" />
-    <ClCompile Include="Libs\TinyXML\tinystr.cpp" />
-    <ClCompile Include="Libs\TinyXML\tinyxml.cpp" />
-    <ClCompile Include="Libs\TinyXML\tinyxmlerror.cpp" />
-    <ClCompile Include="Libs\TinyXML\tinyxmlparser.cpp" />
+    <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Engine\Engine.hpp" />
-    <ClInclude Include="Include\Engine\Level.hpp" />
+    <ClInclude Include="Include\Entity\AnimatedEntity.hpp" />
     <ClInclude Include="Include\Entity\Entity.hpp" />
+    <ClInclude Include="Include\GraphicLoader\GraphicLoader.hpp" />
+    <ClInclude Include="Include\GraphicLoader\Layer.hpp" />
+    <ClInclude Include="Include\GraphicLoader\Tileset.hpp" />
     <ClInclude Include="Include\Header.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resourses\Map\bomsh.tmx" />
-    <None Include="Resourses\Map\bomsh2.tmx" />
+    <None Include="Resourses\Map\test_map_1.tmx">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resourses\Tile\tile.png" />
-    <Image Include="Resourses\Tile\tile1.png" />
-    <Image Include="Resourses\Tile\tile2.png" />
-    <Image Include="Resourses\Tile\tile3.png" />
-    <Image Include="Resourses\Tile\tile4.png" />
-    <Image Include="Resourses\Tile\tile5.png" />
+    <Image Include="Resourses\Map\Tile\tile_blue.png" />
+    <Image Include="Resourses\Map\Tile\tile_green.png" />
+    <Image Include="Resourses\Map\Tile\tile_red.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -122,7 +124,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Include\;$(ProjectDir)Libs\TinyXML\;$(ProjectDir)Libs\SFML-2.4.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Include\;$(PtojectDir)Libs\tinyxml2\;$(ProjectDir)Libs\SFML-2.4.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -158,7 +160,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Include\;$(ProjectDir)Libs\TinyXML\;$(ProjectDir)Libs\SFML-2.4.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Include\;$(PtojectDir)Libs\tinyxml2\;$(ProjectDir)Libs\SFML-2.4.2\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

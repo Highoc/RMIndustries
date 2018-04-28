@@ -25,14 +25,20 @@
     <Filter Include="Include\Entity">
       <UniqueIdentifier>{acaefd45-9ba3-4de2-bf54-51f17e5da10a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resourses\Tile">
-      <UniqueIdentifier>{70314797-57b6-4ab4-8959-b900f106ce2a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resourses\Map">
       <UniqueIdentifier>{551449ff-3ef0-41a4-a012-6e6c018933d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\TinyXML">
-      <UniqueIdentifier>{66efafa8-ef9a-4401-8b18-3bdbd065c84d}</UniqueIdentifier>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{9fcee891-0e34-40ec-9b71-814fb4a9e8bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resourses\Map\Tile">
+      <UniqueIdentifier>{70314797-57b6-4ab4-8959-b900f106ce2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\GraphicLoader">
+      <UniqueIdentifier>{f6a02e2c-c89d-4a18-af97-6b83ff266948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\GraphicLoader">
+      <UniqueIdentifier>{97969a75-9463-4e08-86e9-f5649645ed82}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,17 +51,20 @@
     <ClCompile Include="Code\Entity\Entity.cpp">
       <Filter>Code\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Libs\TinyXML\tinystr.cpp">
-      <Filter>Code\TinyXML</Filter>
+    <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp">
+      <Filter>Libs</Filter>
     </ClCompile>
-    <ClCompile Include="Libs\TinyXML\tinyxml.cpp">
-      <Filter>Code\TinyXML</Filter>
+    <ClCompile Include="Code\GraphicLoader\GraphicLoader.cpp">
+      <Filter>Code\GraphicLoader</Filter>
     </ClCompile>
-    <ClCompile Include="Libs\TinyXML\tinyxmlerror.cpp">
-      <Filter>Code\TinyXML</Filter>
+    <ClCompile Include="Code\GraphicLoader\Layer.cpp">
+      <Filter>Code\GraphicLoader</Filter>
     </ClCompile>
-    <ClCompile Include="Libs\TinyXML\tinyxmlparser.cpp">
-      <Filter>Code\TinyXML</Filter>
+    <ClCompile Include="Code\GraphicLoader\Tileset.cpp">
+      <Filter>Code\GraphicLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Entity\AnimatedEntity.cpp">
+      <Filter>Code\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,36 +77,33 @@
     <ClInclude Include="Include\Entity\Entity.hpp">
       <Filter>Include\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Engine\Level.hpp">
-      <Filter>Include\Engine</Filter>
+    <ClInclude Include="Include\GraphicLoader\Tileset.hpp">
+      <Filter>Include\GraphicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GraphicLoader\GraphicLoader.hpp">
+      <Filter>Include\GraphicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GraphicLoader\Layer.hpp">
+      <Filter>Include\GraphicLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Entity\AnimatedEntity.hpp">
+      <Filter>Include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resourses\Map\bomsh.tmx">
-      <Filter>Resourses\Map</Filter>
-    </None>
-    <None Include="Resourses\Map\bomsh2.tmx">
+    <None Include="Resourses\Map\test_map_1.tmx">
       <Filter>Resourses\Map</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resourses\Tile\tile.png">
-      <Filter>Resourses\Tile</Filter>
+    <Image Include="Resourses\Map\Tile\tile_blue.png">
+      <Filter>Resourses\Map\Tile</Filter>
     </Image>
-    <Image Include="Resourses\Tile\tile1.png">
-      <Filter>Resourses\Tile</Filter>
+    <Image Include="Resourses\Map\Tile\tile_green.png">
+      <Filter>Resourses\Map\Tile</Filter>
     </Image>
-    <Image Include="Resourses\Tile\tile2.png">
-      <Filter>Resourses\Tile</Filter>
-    </Image>
-    <Image Include="Resourses\Tile\tile3.png">
-      <Filter>Resourses\Tile</Filter>
-    </Image>
-    <Image Include="Resourses\Tile\tile4.png">
-      <Filter>Resourses\Tile</Filter>
-    </Image>
-    <Image Include="Resourses\Tile\tile5.png">
-      <Filter>Resourses\Tile</Filter>
+    <Image Include="Resourses\Map\Tile\tile_red.png">
+      <Filter>Resourses\Map\Tile</Filter>
     </Image>
   </ItemGroup>
 </Project>

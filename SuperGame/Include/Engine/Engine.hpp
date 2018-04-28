@@ -3,6 +3,7 @@
 #include <list>
 
 #include "Entity\Entity.hpp"
+#include "GraphicLoader\GraphicLoader.hpp"
 
 extern sf::RenderWindow window;
 
