@@ -27,6 +27,7 @@
     <ClCompile Include="Code\GraphicLoader\Tileset.cpp" />
     <ClCompile Include="Code\Source.cpp" />
     <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Engine\Engine.hpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="Include\GraphicLoader\Layer.hpp" />
     <ClInclude Include="Include\GraphicLoader\Tileset.hpp" />
     <ClInclude Include="Include\Header.hpp" />
+    <ClInclude Include="Player.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resourses\Map\test_map_1.tmx">
