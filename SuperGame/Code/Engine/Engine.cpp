@@ -15,7 +15,7 @@ void Engine::run()
 
 
 
-	add(new Entity(0, 0, ));
+	//add(new Entity(0, 0, ));
 
 	while (window.isOpen())
 	{
