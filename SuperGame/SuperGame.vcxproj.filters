@@ -66,6 +66,9 @@
     <ClCompile Include="Code\Entity\AnimatedEntity.cpp">
       <Filter>Code\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Code\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Header.hpp">
@@ -87,6 +90,9 @@
       <Filter>Include\GraphicLoader</Filter>
     </ClInclude>
     <ClInclude Include="Include\Entity\AnimatedEntity.hpp">
+      <Filter>Include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
       <Filter>Include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
