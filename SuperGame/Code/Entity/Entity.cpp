@@ -7,16 +7,20 @@ Entity::Entity(float x, float y, const sf::Texture& texture) :
 }
 
 Entity::Entity(float x, float y, const sf::Sprite& sprite) :
-	x_(x), y_(y), sprite_(sprite) {}
+	Entity(x, y, 0, 0, sprite) {}
 
-float Entity::getWidth()
+Entity::Entity(float x, float y, float vx, float vy, const sf::Sprite& sprite) :
+	x_(x), y_(y), vx_(vx), vy_(vy), sprite_(sprite) {}
+
+
+
+int Entity::getWidth()
 {
 	return sprite_.getTextureRect().width;
 }
-float Entity::getHeight()
+int Entity::getHeight()
 {
 	return sprite_.getTextureRect().height;
-
 }
 
 
@@ -24,4 +28,32 @@ void Entity::draw()
 {
 	sprite_.setPosition({ x_, y_ });
 	window.draw(sprite_);
+}
+
+void Entity::move(float time)
+{
+	x_ += vx_;
+	y_ += vy_;
+}
+
+void Entity::logic(const sf::Event& event)
+{
+	if (event.type == sf::Event::KeyPressed)
+	{
+		switch (event.key.code)
+		{
+		case sf::Keyboard::Up:
+			vy_ += 20;
+			break;
+		case sf::Keyboard::Down:
+			vy_ -= 20;
+			break;
+		case sf::Keyboard::Left:
+			vx_ -= 20;
+			break;
+		case sf::Keyboard::Right:
+			vx_ += 20;
+			break;
+		}
+	}
 }

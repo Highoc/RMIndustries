@@ -8,17 +8,18 @@ class Entity
 public:
 	Entity(float x, float y, const sf::Texture& texture);
 	Entity(float x, float y, const sf::Sprite& sprite);
+	Entity(float x, float y, float vx, float vy, const sf::Sprite& sprite);
 
-	float getWidth();
-	float getHeight();
+	int getWidth();
+	int getHeight();
 
 	void draw();
-	//void move(float time);
-	//void logic();
+	void move(float time);
+	void logic(const sf::Event& event);
 
 private:
 	float x_, y_;
-	//float vx_, vy_;
+	float vx_, vy_;
 
 	sf::Sprite sprite_;
 };
