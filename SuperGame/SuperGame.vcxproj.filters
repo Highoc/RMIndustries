@@ -40,6 +40,9 @@
     <Filter Include="Code\GraphicLoader">
       <UniqueIdentifier>{97969a75-9463-4e08-86e9-f5649645ed82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Animation Manager">
+      <UniqueIdentifier>{648ed1c8-9ae6-4d24-a864-d3f885938cf2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Source.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Code\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>Code\Animation Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
