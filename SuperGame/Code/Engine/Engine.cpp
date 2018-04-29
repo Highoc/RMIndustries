@@ -7,15 +7,17 @@ void Engine::run()
 	GraphicLoader::loadMapFromXMLFile("test_map_1.tmx");
 	
 	sf::Sprite sprite;
-	
+	sf::Sprite playerSprite;
+	sf::Texture playerTexture;
+	playerTexture.loadFromFile("D:/GameDev/RMINdustries/SuperGame/Resourses/Map/Tile/tile_blue.png");
+	playerSprite.setTexture(playerTexture);
 	for (auto& now : GraphicLoader::getLayer(0).getTiles())
 	{
 		add(new Entity(now.getPosition().x, now.getPosition().y, now));
 	}
 
-
-
-	//add(new Entity(0, 0, ));
+	Player* player = new Player(0,0,playerSprite);
+	add((Entity*) player);
 
 	while (window.isOpen())
 	{
@@ -42,6 +44,7 @@ void Engine::run()
 			entity->logic(event);
 			entity->move(0);
 			entity->draw();
+			entity->keyboard(event);
 		}
 		window.display();
 	}

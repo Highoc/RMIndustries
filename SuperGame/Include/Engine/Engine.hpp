@@ -1,7 +1,7 @@
 #pragma once
 
 #include <list>
-
+#include "Entity\Player.hpp"
 #include "Entity\Entity.hpp"
 #include "GraphicLoader\GraphicLoader.hpp"
 
