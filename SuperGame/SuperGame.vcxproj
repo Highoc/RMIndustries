@@ -137,7 +137,8 @@
       <AdditionalDependencies>sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>XCOPY "$(ProjectDir)Libs\SFML-2.4.2\bin\*.dll" "$(TargetDir)" /D /K /Y</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Copy DLLs to Target Directory</Message>
