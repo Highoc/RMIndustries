@@ -11,6 +11,11 @@
 #include "tinyxml2.h"
 #include "GraphicLoader\Tileset.hpp"
 #include "GraphicLoader\Layer.hpp"
+#include "GraphicLoader\Object.hpp"
+
+
+
+extern sf::RenderWindow window;
 
 namespace TXML = tinyxml2;
 
@@ -24,12 +29,18 @@ public:
 	
 	static Layer& getLayer(size_t id);
 	static std::vector<Layer>& getLayers();
+	static std::vector<Object>& getObjects();
 
 private:
 	static bool loadMapTileset(const TXML::XMLElement* map);
 	static bool loadMapLayers(const TXML::XMLElement* map);
+	static bool loadMapObjects(const TXML::XMLElement* map);
 
 	static std::string filepathToResourses;
+
+	//Расположение вернего углa
+	static const float X_ISOMETRIC, Y_ISOMETRIC;
+	static const float X_ORTOGONAL, Y_ORTOGONAL;
 
 	//Размеры карты в тайлах, размеры тайлов в px
 	static size_t width, height;
@@ -38,4 +49,5 @@ private:
 	//Набор тайлсетов и слоев
 	static std::map<size_t, Tileset> tilesets;
 	static std::vector<Layer> layers;
+	static std::vector<Object> objects;
 };
