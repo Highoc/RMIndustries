@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="1.1.4" orientation="isometric" renderorder="right-down" width="3" height="3" tilewidth="300" tileheight="150" infinite="0" nextobjectid="1">
  <tileset firstgid="1" name="tile_red" tilewidth="300" tileheight="150" tilecount="1" columns="1">
-  <image source="Tile/tile_red.png" width="300" height="150"/>
+  <image source="Map/Tile/tile_red.png" width="300" height="150"/>
  </tileset>
  <tileset firstgid="2" name="tile_blue" tilewidth="300" tileheight="150" tilecount="1" columns="1">
-  <image source="Tile/tile_blue.png" width="300" height="150"/>
+  <image source="Map/Tile/tile_blue.png" width="300" height="150"/>
  </tileset>
  <tileset firstgid="3" name="tile5" tilewidth="300" tileheight="150" tilecount="200" columns="10">
-  <image source="Tile/tile5.png" width="3000" height="3000"/>
+  <image source="Map/Tile/tile5.png" width="3000" height="3000"/>
  </tileset>
  <tileset firstgid="203" name="tile_green" tilewidth="300" tileheight="150" tilecount="1" columns="1">
-  <image source="Tile/tile_green.png" width="300" height="150"/>
+  <image source="Map/Tile/tile_green.png" width="300" height="150"/>
  </tileset>
  <tileset firstgid="204" name="tile4" tilewidth="300" tileheight="335" tilecount="80" columns="10">
-  <image source="Tile/tile4.png" width="3000" height="3000"/>
+  <image source="Map/Tile/tile4.png" width="3000" height="3000"/>
  </tileset>
  <layer name="Слой тайлов 1" width="3" height="3">
   <data encoding="csv">

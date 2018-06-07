@@ -40,6 +40,12 @@
     <Filter Include="Code\GraphicLoader">
       <UniqueIdentifier>{97969a75-9463-4e08-86e9-f5649645ed82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Animation">
+      <UniqueIdentifier>{facdfa6c-edb7-4a7a-863d-18474e71f143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Animation">
+      <UniqueIdentifier>{20b7d910-d06c-4012-9391-c70ba2d5db58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Source.cpp">
@@ -69,6 +75,9 @@
     <ClCompile Include="Code\Entity\Player.cpp">
       <Filter>Code\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Code\Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Header.hpp">
@@ -94,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="Include\Entity\Player.hpp">
       <Filter>Include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.hpp">
+      <Filter>Include\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

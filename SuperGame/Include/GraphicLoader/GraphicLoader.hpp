@@ -24,6 +24,11 @@ public:
 	
 	static Layer& getLayer(size_t id);
 	static std::vector<Layer>& getLayers();
+	
+	static std::string getFilePathToResourses()
+	{
+		return filepathToResourses;
+	}
 
 private:
 	static bool loadMapTileset(const TXML::XMLElement* map);

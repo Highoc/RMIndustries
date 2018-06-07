@@ -4,8 +4,9 @@
 class Player: protected Entity
 {
 public:
-	Player(float x, float y, const sf::Sprite& sprite);
-	void keyboard(const sf::Event& event);
-
+	Player(AnimationManager &a, float x, float y, const sf::Sprite& sprite);
+	void keyboard(const sf::Event& event, float time);
+	void setAnim(AnimationManager &a);
+	void draw();
 };
 

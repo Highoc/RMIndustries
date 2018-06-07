@@ -26,14 +26,15 @@ int Entity::getHeight()
 
 void Entity::draw()
 {
+	
 	sprite_.setPosition({ x_, y_ });
 	window.draw(sprite_);
 }
 
 void Entity::move(float time)
 {
-	x_ += vx_;
-	y_ += vy_;
+	x_ += vx_ * time;
+	y_ += vy_ * time;
 }
 
 void Entity::logic(const sf::Event& event)

@@ -1,0 +1,51 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="вперд.png" transparentColor="">
+ <animation title="down" delay="150">
+  <cut w="19" x="6" y="6" h="20" row="1" col="1"/>
+  <cut w="19" x="38" y="6" h="20" row="1" col="1"/>
+  <cut w="20" x="70" y="6" h="20" row="1" col="1"/>
+  <cut w="20" x="102" y="6" h="20" row="1" col="1"/>
+  <cut w="18" x="198" y="6" h="20" row="1" col="1"/>
+  <cut w="18" x="230" y="6" h="20" row="1" col="1"/>
+  <cut w="20" x="134" y="7" h="19" row="1" col="1"/>
+  <cut w="19" x="166" y="7" h="19" row="1" col="1"/>
+  <cut w="18" x="262" y="7" h="19" row="1" col="1"/>
+  <cut w="19" x="294" y="7" h="19" row="1" col="1"/>
+ </animation>
+ <animation title="left" delay="150">
+  <cut w="18" x="5" y="38" h="20" row="1" col="1"/>
+  <cut w="18" x="37" y="38" h="20" row="1" col="1"/>
+  <cut w="16" x="71" y="38" h="20" row="1" col="1"/>
+  <cut w="16" x="103" y="38" h="20" row="1" col="1"/>
+  <cut w="18" x="197" y="38" h="20" row="1" col="1"/>
+  <cut w="18" x="229" y="38" h="20" row="1" col="1"/>
+  <cut w="17" x="134" y="39" h="19" row="1" col="1"/>
+  <cut w="18" x="165" y="39" h="19" row="1" col="1"/>
+  <cut w="17" x="262" y="39" h="19" row="1" col="1"/>
+  <cut w="16" x="295" y="39" h="19" row="1" col="1"/>
+ </animation>
+ <animation title="right" delay="150">
+  <cut w="17" x="8" y="70" h="20" row="1" col="1"/>
+  <cut w="17" x="40" y="70" h="20" row="1" col="1"/>
+  <cut w="17" x="72" y="70" h="20" row="1" col="1"/>
+  <cut w="17" x="104" y="70" h="20" row="1" col="1"/>
+  <cut w="19" x="200" y="70" h="20" row="1" col="1"/>
+  <cut w="19" x="232" y="70" h="20" row="1" col="1"/>
+  <cut w="18" x="136" y="71" h="19" row="1" col="1"/>
+  <cut w="19" x="168" y="71" h="19" row="1" col="1"/>
+  <cut w="18" x="264" y="71" h="19" row="1" col="1"/>
+  <cut w="17" x="296" y="71" h="19" row="1" col="1"/>
+ </animation>
+ <animation title="up" delay="150">
+  <cut w="21" x="102" y="101" h="21" row="1" col="1"/>
+  <cut w="21" x="134" y="101" h="21" row="1" col="1"/>
+  <cut w="19" x="232" y="101" h="21" row="1" col="1"/>
+  <cut w="19" x="264" y="101" h="21" row="1" col="1"/>
+  <cut w="21" x="8" y="102" h="20" row="1" col="1"/>
+  <cut w="21" x="70" y="102" h="20" row="1" col="1"/>
+  <cut w="20" x="167" y="102" h="20" row="1" col="1"/>
+  <cut w="19" x="200" y="102" h="20" row="1" col="1"/>
+  <cut w="20" x="295" y="102" h="20" row="1" col="1"/>
+  <cut w="20" x="40" y="103" h="19" row="1" col="1"/>
+ </animation>
+</sprites>

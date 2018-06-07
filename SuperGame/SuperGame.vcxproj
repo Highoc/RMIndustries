@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Code\Engine\Engine.cpp" />
     <ClCompile Include="Code\Entity\AnimatedEntity.cpp" />
     <ClCompile Include="Code\Entity\Entity.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Include\Engine\Engine.hpp" />
     <ClInclude Include="Include\Entity\AnimatedEntity.hpp" />
     <ClInclude Include="Include\Entity\Entity.hpp" />
@@ -173,7 +175,8 @@
       <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>XCOPY "$(ProjectDir)Libs\SFML-2.4.2\bin\*.dll" "$(TargetDir)" /D /K /Y</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Copy DLLs to Target Directory</Message>
