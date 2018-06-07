@@ -1,12 +1,22 @@
 #include "GraphicLoader\GraphicLoader.hpp"
 
+#define X_WINDOW_SIZE 1500
+#define Y_WINDOW_SIZE 900
+
 size_t GraphicLoader::width;
 size_t GraphicLoader::height;
 size_t GraphicLoader::tileWidth;
 size_t GraphicLoader::tileHeight;
 std::string GraphicLoader::filepathToResourses;
 std::vector<Layer> GraphicLoader::layers;
+std::vector<Object> GraphicLoader::objects;
 std::map<size_t, Tileset> GraphicLoader::tilesets;
+
+const float GraphicLoader::X_ISOMETRIC = X_WINDOW_SIZE/2;
+const float GraphicLoader::Y_ISOMETRIC = 0;
+
+const float GraphicLoader::X_ORTOGONAL = 0;
+const float GraphicLoader::Y_ORTOGONAL = 0;
 
 void GraphicLoader::setFilepathToResourses(const std::string filepath)
 {
@@ -54,11 +64,11 @@ bool GraphicLoader::loadMapFromXMLFile(const std::string filename)
 		return false;
 	}
 
-	/*if (!loadMapObjects(mapElement))
+	if (!loadMapObjects(mapElement))
 	{
 		std::cout << "Loading objects failed." << std::endl;
 		return false;
-	}*/
+	}
 
 	return true;
 }
@@ -120,23 +130,22 @@ bool GraphicLoader::loadMapLayers(const TXML::XMLElement* map)
 
 		std::istringstream is(data);
 		std::string s;
-		int x = width - 1, y = 0, i = 0;
+
+		int x = 0, y = 0;
 		while (std::getline(is, s, ','))
 		{
 			int tileGID = stoi(s);
 
 			sf::Sprite sprite = getSprite(tileGID);
-			sprite.setPosition(x * tileWidth/2, 150 + y * tileHeight/2 - sprite.getTextureRect().height + tileHeight);
+
+			//sprite.getTextureRect().height + tileHeight
+			sprite.setPosition(X_ISOMETRIC - tileWidth/2 + (x - y)*((float) tileWidth)/2, Y_ISOMETRIC + (x + y)*((float) tileHeight)/2);
 			layer.addTile(sprite);
 
-			i++;
-			x++;
-			y++;
-			if (i == height)
+			if (!(++x % width))
 			{
-				x = x - height - 1;
-				y = y - height + 2 - 1;
-				i = 0;
+				x = 0;
+				y++;
 			}
 		}
 
@@ -145,6 +154,76 @@ bool GraphicLoader::loadMapLayers(const TXML::XMLElement* map)
 		layerElement = layerElement->NextSiblingElement("layer");
 	}
 
+	return true;
+}
+
+
+const float SIN_A = 75 / 167.71;
+const float COS_A = 150 / 167.71;
+
+bool GraphicLoader::loadMapObjects(const TXML::XMLElement* map)
+{
+	const TXML::XMLElement* objectGroupElement = map->FirstChildElement("objectgroup");
+	while (objectGroupElement)
+	{
+		const TXML::XMLElement* objectElement = objectGroupElement->FirstChildElement("object");
+		while (objectElement)
+		{
+			std::string objectType;
+			if (objectElement->Attribute("type") != NULL)
+			{
+				objectType = objectElement->Attribute("type");
+			}
+
+			std::string objectName;
+			if (objectElement->Attribute("name") != NULL)
+			{
+				objectName = objectElement->Attribute("name");
+			}
+
+			float x = objectElement->FloatAttribute("x");
+			float y = objectElement->FloatAttribute("y");
+
+			std::cout << objectName << " " << x << " " << y << std::endl;
+
+			sf::Sprite sprite;
+			int width, height;
+			if (objectElement->Attribute("width") != NULL)
+			{
+				width = atoi(objectElement->Attribute("width"));
+				height = atoi(objectElement->Attribute("height"));
+			}
+
+			if (objectElement->Attribute("gid") != NULL)
+			{
+				int gid = objectElement->IntAttribute("gid");
+				sprite = getSprite(gid);
+			}
+
+			sprite.setPosition(X_ISOMETRIC + (x - y) - tileWidth/2, Y_ISOMETRIC + (x + y)/2 - tileHeight);
+			Object object(objectName, objectType, sprite);
+			
+			const TXML::XMLElement* properties = objectElement->FirstChildElement("properties");
+			if (properties != NULL)
+			{
+				const TXML::XMLElement* property = properties->FirstChildElement("property");
+				while (property)
+				{
+					std::string propertyName = property->Attribute("name");
+					std::string propertyValue = property->Attribute("value");
+					object.addProperty(propertyName, propertyValue);
+
+					property = property->NextSiblingElement("property");
+				}
+			}
+			objects.push_back(object);
+
+			objectElement = objectElement->NextSiblingElement("object");
+		}
+
+		objectGroupElement = objectGroupElement->NextSiblingElement("objectgroup");
+	}
+	
 	return true;
 }
 
@@ -171,129 +250,12 @@ std::vector<Layer>& GraphicLoader::getLayers()
 	return layers;
 }
 
+std::vector<Object>& GraphicLoader::getObjects()
+{
+	return objects;
+}
+
 Layer& GraphicLoader::getLayer(size_t id)
 {
 	return layers.at(id);
 }
-
-/*
-#include <string>
-#include <vector>
-#include <map>
-#include <SFML/Graphics.hpp>
-
-#include "tinyxml2.h"
-/*
-
-class Level
-{
-public:
-bool LoadFromFile(std::string filename);
-
-void Draw(sf::RenderWindow &window);
-sf::Vector2i GetTileSize();
-std::vector<Layer> layers;
-private:
-int width, height, tileWidth, tileHeight;
-int firstTileID;
-sf::Rect<float> drawingBounds;
-sf::Texture tilesetImage;
-//std::vector<Layer> layers;
-};
-// Работа с объектами
-XMLElement *objectGroupElement;
-
-// Если есть слои объектов
-if (map->FirstChildElement("objectgroup") != NULL)
-{
-	objectGroupElement = map->FirstChildElement("objectgroup");
-	while (objectGroupElement)
-	{
-		// Контейнер <object>
-		XMLElement *objectElement;
-		objectElement = objectGroupElement->FirstChildElement("object");
-
-		while (objectElement)
-		{
-			// Получаем все данные - тип, имя, позиция, etc
-			std::string objectType;
-			if (objectElement->Attribute("type") != NULL)
-			{
-				objectType = objectElement->Attribute("type");
-			}
-			std::string objectName;
-			if (objectElement->Attribute("name") != NULL)
-			{
-				objectName = objectElement->Attribute("name");
-			}
-			int x = atoi(objectElement->Attribute("x"));
-			int y = atoi(objectElement->Attribute("y"));
-
-			int width, height;
-
-			sf::Sprite sprite;
-			sprite.setTexture(tilesetImage);
-			sprite.setTextureRect(sf::Rect<int>(0, 0, 0, 0));
-			sprite.setPosition(x, y);
-
-			if (objectElement->Attribute("width") != NULL)
-			{
-				width = atoi(objectElement->Attribute("width"));
-				height = atoi(objectElement->Attribute("height"));
-			}
-			else
-			{
-				width = subRects[atoi(objectElement->Attribute("gid")) - firstTileID].width;
-				height = subRects[atoi(objectElement->Attribute("gid")) - firstTileID].height;
-				sprite.setTextureRect(subRects[atoi(objectElement->Attribute("gid")) - firstTileID]);
-			}
-
-			// Экземпляр объекта
-			Object object;
-			object.name = objectName;
-			object.type = objectType;
-			object.sprite = sprite;
-
-			sf::Rect <int> objectRect;
-			objectRect.top = y;
-			objectRect.left = x;
-			objectRect.height = height;
-			objectRect.width = width;
-			object.rect = objectRect;
-
-			// "Переменные" объекта
-			XMLElement *properties;
-			properties = objectElement->FirstChildElement("properties");
-			if (properties != NULL)
-			{
-				XMLElement *prop;
-				prop = properties->FirstChildElement("property");
-				if (prop != NULL)
-				{
-					while (prop)
-					{
-						std::string propertyName = prop->Attribute("name");
-						std::string propertyValue = prop->Attribute("value");
-
-						object.properties[propertyName] = propertyValue;
-
-						prop = prop->NextSiblingElement("property");
-					}
-				}
-			}
-
-			// Пихаем объект в вектор
-			objects.push_back(object);
-
-			objectElement = objectElement->NextSiblingElement("object");
-		}
-		objectGroupElement = objectGroupElement->NextSiblingElement("objectgroup");
-	}
-}
-else
-{
-	std::cout << "No object layers found..." << std::endl;
-}
-
-return true;
-}*/

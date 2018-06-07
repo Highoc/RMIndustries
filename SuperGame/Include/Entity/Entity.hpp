@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <iostream>
 
 extern sf::RenderWindow window;
 
@@ -16,8 +17,9 @@ public:
 	void draw();
 	void move(float time);
 	void logic(const sf::Event& event);
+	virtual void keyboard(const sf::Event& event) {};
 
-private:
+protected:
 	float x_, y_;
 	float vx_, vy_;
 

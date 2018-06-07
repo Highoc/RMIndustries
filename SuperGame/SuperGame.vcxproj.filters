@@ -66,8 +66,11 @@
     <ClCompile Include="Code\Entity\AnimatedEntity.cpp">
       <Filter>Code\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="Code\Entity\Player.cpp">
       <Filter>Code\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\GraphicLoader\Object.cpp">
+      <Filter>Code\GraphicLoader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,12 +95,18 @@
     <ClInclude Include="Include\Entity\AnimatedEntity.hpp">
       <Filter>Include\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Player.hpp">
+    <ClInclude Include="Include\Entity\Player.hpp">
       <Filter>Include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\GraphicLoader\Object.hpp">
+      <Filter>Include\GraphicLoader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resourses\Map\test_map_1.tmx">
+      <Filter>Resourses\Map</Filter>
+    </None>
+    <None Include="Resourses\Map\test_map_2.tmx">
       <Filter>Resourses\Map</Filter>
     </None>
   </ItemGroup>
