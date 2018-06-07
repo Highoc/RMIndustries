@@ -23,8 +23,12 @@ void Engine::run()
 		add(new Entity(now.getPosition().x, now.getPosition().y, now));
 	}
 
-	Player* player = new Player(anim,100,100,playerSprite);
-	//player->setAnim(anim);
+	for (auto& now : GraphicLoader::getObjects())
+	{
+		add(new Entity(now.getPosition().x, now.getPosition().y, now.getSprite()));
+	}
+
+	Player* player = new Player(0,0,playerSprite);
 	add((Entity*) player);
 	Clock clock;
 

@@ -26,6 +26,7 @@
     <ClCompile Include="Code\Entity\Player.cpp" />
     <ClCompile Include="Code\GraphicLoader\GraphicLoader.cpp" />
     <ClCompile Include="Code\GraphicLoader\Layer.cpp" />
+    <ClCompile Include="Code\GraphicLoader\Object.cpp" />
     <ClCompile Include="Code\GraphicLoader\Tileset.cpp" />
     <ClCompile Include="Code\Source.cpp" />
     <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="Include\Entity\Player.hpp" />
     <ClInclude Include="Include\GraphicLoader\GraphicLoader.hpp" />
     <ClInclude Include="Include\GraphicLoader\Layer.hpp" />
+    <ClInclude Include="Include\GraphicLoader\Object.hpp" />
     <ClInclude Include="Include\GraphicLoader\Tileset.hpp" />
     <ClInclude Include="Include\Header.hpp" />
   </ItemGroup>
@@ -45,6 +47,7 @@
     <None Include="Resourses\Map\test_map_1.tmx">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resourses\Map\test_map_2.tmx" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resourses\Map\Tile\tile_blue.png" />
