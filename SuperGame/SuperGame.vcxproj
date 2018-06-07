@@ -29,6 +29,8 @@
     <ClCompile Include="Code\GraphicLoader\Tileset.cpp" />
     <ClCompile Include="Code\Source.cpp" />
     <ClCompile Include="Libs\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="AnimationManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Engine\Engine.hpp" />
@@ -107,7 +109,7 @@
     <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <ExtensionsToDeleteOnClean>*.dll;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -175,7 +177,8 @@
       <AdditionalDependencies>sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>XCOPY "$(ProjectDir)Libs\SFML-2.4.2\bin\*.dll" "$(TargetDir)" /D /K /Y</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
     <PreBuildEvent>
       <Message>Copy DLLs to Target Directory</Message>

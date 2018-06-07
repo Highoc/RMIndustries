@@ -11,7 +11,9 @@ sf::RenderWindow window(sf::VideoMode(X_WINDOW_SIZE, Y_WINDOW_SIZE), "Cool game!
 
 int main()
 {
+	
 	Engine e;
+	
 	e.run();
 
 	system("pause");

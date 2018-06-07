@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" renderorder="right-down" width="5" height="5" tilewidth="300" tileheight="150" nextobjectid="37">
+ <tileset firstgid="1" name="ромбики" tilewidth="300" tileheight="150" tilecount="200" columns="10">
+  <image source="C:\Users\haker\Desktop\game\RMIndustries\SuperGame\Resourses\Tile\tile4.png" width="3000" height="3000"/>
+ </tileset>
+ <tileset firstgid="201" name="здание" tilewidth="300" tileheight="330" tilecount="90" columns="10">
+  <image source="C:\Users\haker\Desktop\game\RMIndustries\SuperGame\Resourses\Tile\tile5.png" width="3000" height="3000"/>
+ </tileset>
+ <layer name="Слой тайлов 1" width="5" height="5">
+  <data>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="201"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+  </data>
+ </layer>
+ <objectgroup name="Слой объектов 1">
+  <object id="6" name="solid" x="3" y="603" width="148.667" height="152.667"/>
+  <object id="8" name="solid" x="3.33317" y="451.333" width="148.667" height="152.667"/>
+  <object id="9" name="solid" x="4.6665" y="303.333" width="148.667" height="152.667"/>
+  <object id="10" name="solid" x="3.33317" y="155.333" width="148.667" height="152.667"/>
+  <object id="11" name="solid" x="2.6665" y="1.33317" width="148.667" height="152.667"/>
+  <object id="12" name="solid" x="154" y="602" width="148.667" height="152.667"/>
+  <object id="13" name="solid" x="302.666" y="600" width="148.667" height="152.667"/>
+  <object id="14" name="solid" x="454" y="603.333" width="148.667" height="152.667"/>
+  <object id="15" name="solid" x="602.666" y="601.333" width="148.667" height="152.667"/>
+  <object id="16" name="solid" x="606" y="451.333" width="148.667" height="152.667"/>
+  <object id="17" name="solid" x="604" y="301.333" width="148.667" height="152.667"/>
+  <object id="18" name="solid" x="607.333" y="148.666" width="148.667" height="152.667"/>
+  <object id="19" name="solid" x="603.333" y="-2.00017" width="148.667" height="152.667"/>
+  <object id="20" name="solid" x="458" y="4.6665" width="148.667" height="152.667"/>
+  <object id="21" name="solid" x="155.333" y="3.33317" width="148.667" height="152.667"/>
+  <object id="22" name="solid" x="322" y="-32.6668" width="148.667" height="152.667"/>
+  <object id="23" name="solid" x="156" y="448" width="148.667" height="152.667"/>
+  <object id="24" name="solid" x="160" y="297.333" width="148.667" height="152.667"/>
+  <object id="25" name="solid" x="155.333" y="144.667" width="148.667" height="152.667"/>
+  <object id="26" name="solid" x="300.666" y="148.666" width="148.667" height="152.667"/>
+  <object id="27" name="solid" x="454" y="304.666" width="148.667" height="152.667"/>
+  <object id="28" name="solid" x="455.333" y="450" width="148.667" height="152.667"/>
+  <object id="29" name="solid" x="304" y="446.667" width="148.667" height="152.667"/>
+  <object id="30" x="151" y="235.667"/>
+ </objectgroup>
+ <objectgroup name="Слой объектов 2">
+  <object id="33" name="build" x="121.667" y="123.667" width="152" height="144.333"/>
+  <object id="35" name="build" x="471.72" y="321.861" width="164.379" height="253.154" rotation="116.323"/>
+  <object id="36" name="build" x="284.468" y="459.37" width="192.787" height="253.154" rotation="232.761"/>
+ </objectgroup>
+</map>
